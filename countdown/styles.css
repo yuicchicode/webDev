@@ -1,11 +1,14 @@
 body {
-  background-color: black;
+  background-image: url('img/countdownBG.jpg');
+  background-repeat: no-repeat;
+  background-size: 100%;
   color: white;
 }
 
 header {
   background-color: #333;
   padding: 10px;
+  border-radius: 5px;
 }
 
 nav ul {
@@ -28,8 +31,18 @@ nav ul li a:hover {
   text-decoration: underline;
 }
 
+div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  height: 10rem;
+  width: 100%;
+}
+
 #countdown {
   font-size: 24px;
   font-weight: bold;
   text-align: center;
+  
 }
