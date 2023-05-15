@@ -1,27 +1,35 @@
-const endDate = new Date('2023-12-31T23:59:59');
+const daysEl = document.getElementById("days");
+const hoursEl = document.getElementById("hours");
+const minsEl = document.getElementById("mins");
+const secondsEl = document.getElementById("seconds");
 
-function updateCountdown() {
-  const currentDate = new Date();
-  const timeDifference = endDate - currentDate;
+const newYears = "1 Jan 2024";
 
-  // Date
-  if (timeDifference <= 0) {
-    document.getElementById('countdown').textContent = 'Contagem regressiva encerrada';
-    return;
-  }
-
-  // Math
-  const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
-
-  // Update html
-  document.getElementById('countdown').textContent = `${days} dias, ${hours} horas, ${minutes} minutos, ${seconds} segundos`;
-
-  // Call the function 1 second
-  setTimeout(updateCountdown, 1000);
+function countdown() {
+  const targetDate = new Date("2023-12-31");
+  
+  setInterval(() => {
+    const currentDate = new Date();
+    const remainingTime = targetDate - currentDate;
+    
+    const days = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((remainingTime % (1000 * 60)) / 1000); 
+    
+    
+    daysEl.textContent = days;
+    hoursEl.textContent = hours;
+    minsEl.textContent = minutes;
+    secondsEl.textContent = seconds;
+    
+    
+    if (remainingTime < 0) {
+      clearInterval(countdownInterval);
+      
+    }
+  }, 1000);
 }
 
-// Start Countdown
-updateCountdown();
+
+countdown();
