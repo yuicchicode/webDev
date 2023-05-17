@@ -41,5 +41,26 @@ const quizzData = [
     }
 ]
 
+const questionElement = document.getElementById('question');
+const a1_text = document.getElementById(a1text);
+const a2_text = document.getElementById(a2text);
+const a3_text = document.getElementById(a3text);
+const a4_text = document.getElementById(a4text);
 
-1844
+let currentQuiz = 0;
+
+loadQuiz();
+
+
+function loadQuiz() {
+    const currentQuizData = quizzData[currentQuiz];
+
+    questionElement.innerText = currentQuizData.question;
+    a1_text.innerText = currentQuizData.a1;
+    a2_text.innerText = currentQuizData.a2;
+    a3_text.innerText = currentQuizData.a3;
+    a4_text.innerText = currentQuizData.a4;
+
+
+    currentQuiz++;
+}
