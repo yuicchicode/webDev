@@ -40,6 +40,6 @@ const quizzData = [
         correct: 'a2'  
     }
 ]
-]
+
 
 1844
