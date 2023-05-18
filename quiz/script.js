@@ -34,13 +34,16 @@ const quizzData = [
     {
         question: 'Wich year the first rocket was launched?',
         a1: '1954',
-        a2: '1926',
-        a3: '1969',
+        a2: '1959',
+        a3: '1926',
         a4: '1945',
-        correct: 'a2'  
-    }
+        correct: 'a3'  
+    },
 ]
 
+const quiz = document.getElementById("quiz");
+const answerEls = document.querySelectorAll(".answer");
+const submitBtn = document.getElementById("submit");
 const questionElement = document.getElementById('question');
 const a1_text = document.getElementById("um");
 const a2_text = document.getElementById("dois");
@@ -48,6 +51,7 @@ const a3_text = document.getElementById("tres");
 const a4_text = document.getElementById("quatro");
 
 let currentQuiz = 0;
+let score = 0;
 
 loadQuiz();
 
@@ -61,6 +65,46 @@ function loadQuiz() {
     a3_text.innerText = currentQuizData.a3;
     a4_text.innerText = currentQuizData.a4;
 
-
-    currentQuiz++;
 }
+
+function getSelected() {
+    let answer = undefined
+    
+    answerEls.forEach((answerEl => {
+        if (answerEl.checked) {
+            answer = answerEl.id;
+        }
+    }));
+
+    return answer;
+}
+
+function deselectAnswers() {
+    answerEls.forEach((answerEl) => {
+        answerEl.checked = false;
+    });
+}
+
+submitBtn.addEventListener("click", () => {
+    // check to see the answer
+    const answer = getSelected();
+
+    if (answer) {
+        if (answer === quizzData[currentQuiz].correct) {
+            score++;
+        }
+
+        currentQuiz++;
+        if (currentQuiz < quizzData.length) {
+            loadQuiz();
+        } else {
+            quiz.innerHTML = `
+                <h2>You answered correctly at ${score}/${quizzData.length} questions.</h2>
+                
+                <button onclick="location.reload()">Reload</button>
+            `;
+        }
+    }
+});
+
+
