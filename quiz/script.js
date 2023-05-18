@@ -42,10 +42,10 @@ const quizzData = [
 ]
 
 const questionElement = document.getElementById('question');
-const a1_text = document.getElementById(a1text);
-const a2_text = document.getElementById(a2text);
-const a3_text = document.getElementById(a3text);
-const a4_text = document.getElementById(a4text);
+const a1_text = document.getElementById("um");
+const a2_text = document.getElementById("dois");
+const a3_text = document.getElementById("tres");
+const a4_text = document.getElementById("quatro");
 
 let currentQuiz = 0;
 
