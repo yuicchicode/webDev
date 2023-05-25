@@ -23,6 +23,10 @@ function resetTimer() {
   clearInterval(intervalId);
   elapsedTime = 0;
   updateTimer();
+  document.getElementById("hours").textContent = "00";
+  document.getElementById("minutes").textContent = "00";
+  document.getElementById("seconds").textContent = "00";
+
 }
 
 function updateTimer() {
