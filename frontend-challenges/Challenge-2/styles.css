@@ -1,0 +1,52 @@
+:root {
+    --yellow: hsl(47, 88%, 63%);
+    --white: hsl(0, 0%, 100%);
+    --grey: hsl(0, 0%, 50%);
+    --black: hsl(0, 0%, 7%);
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--yellow);
+}
+
+.container{
+    background: var(--white);
+    width: 20rem;
+    padding: 1rem;
+    border-radius: 10px;
+    border-style: ridge;
+    border-color: black;
+    box-shadow: 10px 10px;
+}
+
+.container .principal {
+    display: flex;
+    flex-direction: column;
+}
+
+.container .learning {
+    background-color: var(--yellow);
+    width: 5rem;
+    padding: 10px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.container .picture {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-weight: bold;
+}
+
+.container .picture img {
+    width: 2rem;
+    height: 2rem;
+    margin-right: 1rem;
+}
