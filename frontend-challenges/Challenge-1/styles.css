@@ -1,0 +1,61 @@
+:root {
+    --green: hsl(75, 94%, 57%);
+    --grey: hsl(0, 0%, 20%);
+    --white: hsl(0, 0%, 100%);
+    --dark-grey: hsl(0, 0%, 12%);
+    --of-black:hsl(0, 0%, 0%);
+}
+
+body{
+    background: var(--of-black);   
+    color: var(--white);
+    margin: 0 auto;
+}
+
+.container{
+    background: var(--dark-grey);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15vh auto;
+    width: 30rem;
+    height: 45rem;
+    border-radius: 2%;
+}
+
+.container img {
+    margin-top: 10%;
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+}
+.container .person-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container .description {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    color: var(--green);
+}
+
+
+.container .buttons {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.buttons a{
+    margin-top: 1rem;
+    text-align: center;
+    background-color: var(--grey);
+    color: var(--white);
+    border: none;
+    text-decoration: none;
+    padding: 1rem 8rem;
+    border-radius: 20px;
+}
