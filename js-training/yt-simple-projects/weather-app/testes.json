@@ -1,0 +1,32 @@
+{
+    "status": "success",
+    "msg": "As faturas foram adicionadas para serem disparadas por e-mail. Por se tratar de um processo de envio massivo, o sistema fará o agendamento do disparo. Dentro de alguns minutos o cliente irá receber os e-mails com as faturas. OBS: Para cada fatura selecionada será enviado um e-mail",
+    "job": {
+      "tries": 1,
+      "timeout": 172800,
+      "memory": 2048,
+      "faturas": [
+        {
+          "id_fatura": "{idFatura}"
+        }
+      ],
+      "emails": [
+        {
+          "id_contato": null,
+          "id_cliente": "{clienteid}",
+          "email": "macielrsf@gmail.com",
+          "nome": "{nomeCliente}",
+          "name": "{nomeCliente}",
+          "permite_enviar_email": true,
+          "origem": "cadastro_cliente"
+        }
+      ],
+      "connection": null,
+      "queue": "hubsoft-prioritario",
+      "delay": {
+        "date": "2019-10-07 13:39:48.000000",
+        "timezone_type": 3,
+        "timezone": "America/Sao_Paulo"
+      }
+    }
+  }
