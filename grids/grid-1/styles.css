@@ -1,3 +1,9 @@
+body, html{
+    height: 100%;
+    margin: 0;
+}
+
+
 
 .container {
     display: grid;
@@ -5,49 +11,114 @@
     grid-template-rows: repeat(3, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
+    height: 100%;
+    width: 100%;
 }
-    
+
+/* First Animation */
 .div1 { 
     grid-area: 1 / 1 / 2 / 2; 
-    height: 100px;
+    height: 100%;
+    background-color: aliceblue;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
 }
 
+.son1d1 {
+    grid-area: 1 / 1 / 2 /2;
+    border: 1px solid black;
+    background-color: black;
+    animation: breathe 2s infinite;
+}
+
+.son1d1:hover{
+    animation: breath 2s forwards;
+}
+
+@keyframes breathe {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+  }
+  
+  @keyframes breatheHover {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.1); }
+  }
+
+.son2d1 {
+    grid-area: 1 / 2 / 2 /3;
+    border: 1px solid black;
+}
+
+
+.son3d1 {
+    grid-area: 2 / 1 / 3 /2;
+    border: 1px solid black;
+}
+
+.son4d1 {
+    grid-area: 2 / 2 / 3 /3;
+    border: 1px solid black;
+}
+
+
+/* Second Animation */
 .div2 { 
     grid-area: 1 / 2 / 2 / 3; 
-    height: 100px;
+    height: 100%;
+    background-color: aliceblue;
 }
 
+/* Third Animation */
 .div3 { 
     grid-area: 1 / 3 / 2 / 4; 
-    height: 100px;
+    height: 100%;
+    background-color: aliceblue;
 }
 
+/* Fourth Animation */
 .div4 { 
     grid-area: 2 / 1 / 3 / 2; 
-    height: 100px;
+    height: 100%;
+    background-color: aliceblue;
 }
 
+/* Fifth Animation */
 .div5 { 
     grid-area: 2 / 2 / 3 / 3; 
-    height: 100px;
+    height: 100%;
+    background-color: aliceblue;
 }
 
+/* sixth Animation */
 .div6 { 
     grid-area: 2 / 3 / 3 / 4; 
-    height: 100px;
+    height: 100%;
+    background-color: aliceblue;
 }
 
+/* Seventh Animation */
 .div7 {
     grid-area: 3 / 1 / 4 / 2; 
-    height: 100px;
+    height: 100%;
+    background-color: aliceblue;
 }
 
+/* eighth Animation */
 .div8 { 
     grid-area: 3 / 2 / 4 / 3; 
-    height: 100px;
+    height: 100%;
+    background-color: aliceblue;
 }
 
+/* Ninth Animation */
 .div9 { 
     grid-area: 3 / 3 / 4 / 4; 
-    height: 100px;
+    height: 100%;
+    background-color: aliceblue;
 }

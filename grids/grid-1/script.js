@@ -40,3 +40,5 @@ function getRandomColor() {
     // Gera uma cor aleatória no formato hexadecimal
     return '#' + Math.floor(Math.random() * 16777215).toString(16);
 }*/
+
+
