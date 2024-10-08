@@ -9,7 +9,7 @@ body, html{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    grid-column-gap: 0px;
+    grid-column-gap: 2px;
     grid-row-gap: 0px;
     height: 100%;
     width: 100%;
@@ -143,7 +143,102 @@ body, html{
     grid-area: 1 / 2 / 2 / 3; 
     height: 100%;
     background-color: aliceblue;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 1px;
+    grid-row-gap: 1px;
 }
+
+
+.son1d2 { 
+    grid-area: 1 / 1 / 2 / 2; 
+    position: relative;
+    animation: downtotop 2s infinite forwards;
+    background-color: black;
+}
+
+.son1d2::before {
+    top: 0;
+  }
+  
+  .son1d2::after {
+    bottom: 0;
+  }
+
+@keyframes downtotop {
+    from {
+        height: 0;
+      }
+      to {
+        height: 100%;
+      }
+}
+
+.son2d2 {
+    grid-area: 1 / 2 / 2 / 3;
+    position: relative;
+    background-color: black; 
+    animation: downtotop 2s infinite reverse;
+}
+
+.son2d2::before {
+    top: 0;
+}
+  
+.son2d2::after {
+    bottom: 0;
+}
+
+.son3d2 { 
+    grid-area: 2 / 1 / 3 / 2; 
+    position: relative;
+    overflow: hidden;
+    background-color: transparent;
+}
+
+.son3d2::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: black;
+    animation: toptodown 2s ease-in-out forwards infinite;
+    z-index: 1;
+}
+
+@keyframes toptodown {
+    0% {
+        height: 0%;
+    }
+
+    100% {
+        height: 100%;
+    }
+}
+
+
+.son4d2 { 
+    grid-area: 2 / 2 / 3 / 3;
+    position: relative;
+    overflow: hidden;
+    background-color: transparent;
+}
+
+.son4d2::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: black;
+    animation: toptodown 2s ease-in-out reverse infinite;
+    z-index: 1;
+}
+
 
 /* Third Animation */
 .div3 { 
